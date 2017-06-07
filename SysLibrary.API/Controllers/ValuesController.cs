@@ -27,7 +27,8 @@ namespace SysLibrary.API.Controllers
 
             try
             {
-                var teste =  _admContext.getById(1);
+                // var teste = _admContext.GetById(1);
+                var teste = _admContext.GetAll();
 
                 ad = new JsonResult(teste);
 
@@ -37,7 +38,7 @@ namespace SysLibrary.API.Controllers
                 throw;
             }
 
-            return (ad); 
+            return ad; 
         }
 
         // GET api/values/5

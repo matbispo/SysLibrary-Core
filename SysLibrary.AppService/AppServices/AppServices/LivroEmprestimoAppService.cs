@@ -1,20 +1,18 @@
-﻿using AutoMapper;
+﻿using SysLibrary.AppService.AppServices.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using SysLibrary.AppService.DTOs;
 using SysLibrary.Domain.Entities;
 using SysLibrary.Domain.Interfaces.Services;
-using SysLibrary.AppService.AppServices.Interfaces;
 
 namespace SysLibrary.AppService.AppServices.AppServices
 {
-    public class AdminAppService: AppServiceBase<Admin,AdminDTO> ,IAdminAppService
+    public class LivroEmprestimoAppService : AppServiceBase<LivroEmprestimo, LivroEmprestimoDTO>, ILivroEmprestimoAppService
     {
+        private readonly ILivroEmprestimoService _service;
 
-        private readonly IAdminService _service;
-
-        public AdminAppService(IAdminService service)
+        public LivroEmprestimoAppService(ILivroEmprestimoService service)
         :base(service)
         {
             _service = service;

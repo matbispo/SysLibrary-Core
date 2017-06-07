@@ -11,8 +11,31 @@ namespace SysLibrary.AppService.MapperConfig
     {
           public AutoMapperConfig()
           {
-              CreateMap<AdminDTO, Admin>();
+            // Entity to DTO
+
             CreateMap<Admin, AdminDTO>();
+            CreateMap<Assunto, AssuntoDTO>();
+            CreateMap<Autor, AutorDTO>();
+            CreateMap<AutorLivro, AutorLivroDTO>();
+            CreateMap<Editora, EditoraDTO>();
+            CreateMap<Emprestimo, EmprestimoDTO>();
+            CreateMap<Livro, Livro>();
+            CreateMap<LivroEmprestimo, LivroEmprestimoDTO>();
+            CreateMap<Usuario, UsuarioDTO>();
+            CreateMap<UsuarioSuspenso, UsuarioSuspensoDTO>();
+
+            // DTO to Entity
+
+            CreateMap<AdminDTO, Admin>();
+            CreateMap<AssuntoDTO, Assunto>();
+            CreateMap<AutorDTO, Autor>();
+            CreateMap<AutorLivroDTO, AutorLivro>();
+            CreateMap<EditoraDTO, Editora>();
+            CreateMap<EmprestimoDTO, Emprestimo>();
+            CreateMap<LivroDTO, Livro>();
+            CreateMap<LivroEmprestimoDTO, LivroEmprestimo>();
+            CreateMap<UsuarioDTO, Usuario>();
+            CreateMap<UsuarioSuspensoDTO, UsuarioSuspenso>();
         }
     }
 }

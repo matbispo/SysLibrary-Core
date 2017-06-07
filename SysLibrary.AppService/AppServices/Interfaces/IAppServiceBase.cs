@@ -10,8 +10,10 @@ namespace SysLibrary.AppService.AppServices.Interfaces
 
         TDTO GetById(int id);
 
-        bool Save(TDTO dto);
+        void Add(TDTO dto);
 
-        bool Delete(TDTO dto);
+        void Update(TDTO dto);
+
+        void Delete(TDTO dto);
     }
 }

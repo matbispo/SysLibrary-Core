@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using SysLibrary.AppService.DTOs;
@@ -9,12 +8,11 @@ using SysLibrary.AppService.AppServices.Interfaces;
 
 namespace SysLibrary.AppService.AppServices.AppServices
 {
-    public class AdminAppService: AppServiceBase<Admin,AdminDTO> ,IAdminAppService
+    public class AutorLivroAppService : AppServiceBase<AutorLivro, AutorLivroDTO>, IAutorLivroAppService
     {
+        private readonly IAutorlivroService _service;
 
-        private readonly IAdminService _service;
-
-        public AdminAppService(IAdminService service)
+        public AutorLivroAppService(IAutorlivroService service)
         :base(service)
         {
             _service = service;

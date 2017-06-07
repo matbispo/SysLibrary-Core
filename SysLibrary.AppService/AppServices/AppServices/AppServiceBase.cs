@@ -19,26 +19,43 @@ namespace SysLibrary.AppService.AppServices.AppServices
             _service = service;
         }
 
-        public bool Save(TDTO dto)
+        public void Add(TDTO dto)
         {
-            throw new NotImplementedException();
+            var entity = Mapper.Map<TDTO, tEntity>(dto);
+            _service.add(entity);
+        }
+
+        public void Update(TDTO dto)
+        {
+            var entity = Mapper.Map<TDTO, tEntity>(dto);
+            _service.Update(entity);
         }
 
         public IEnumerable<TDTO> GetAll()
         {
-            throw new NotImplementedException();
+            var listEntt = _service.GetAll();
+            ICollection<TDTO> itens = new List<TDTO>();
+
+            foreach (var item in listEntt)
+            {
+                itens.Add(Mapper.Map<tEntity, TDTO>(item));
+            }
+
+            return itens;
         }
 
         public TDTO GetById(int id)
         {
-
-            throw new NotImplementedException();
-
+            var entt = _service.GetById(id);
+            var mapDto = Mapper.Map<tEntity, TDTO>(entt);
+            return mapDto;
+   
         }
 
-        public bool Delete(TDTO dto)
+        public void Delete(TDTO dto)
         {
-            throw new NotImplementedException();
+            var entity = Mapper.Map<TDTO, tEntity>(dto);
+            _service.Remove(entity);
         }
 
     }

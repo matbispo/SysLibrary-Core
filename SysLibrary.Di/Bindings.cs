@@ -42,15 +42,17 @@ namespace SysLibrary.DI
 
             //AppServices
             builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-        /*    builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-            builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-            builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-            builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-            builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-            builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-            builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();
-            builder.RegisterType<AdminAppService>().As<IAdminAppService>().InstancePerLifetimeScope();*/
-            
+            builder.RegisterType<AssuntoAppService>().As<IAssuntoAppService>().InstancePerLifetimeScope();
+            builder.RegisterType<AutorAppService>().As<IAutorAppService>().InstancePerLifetimeScope();
+            builder.RegisterType<AutorLivroAppService>().As<IAutorLivroAppService>().InstancePerLifetimeScope();
+            builder.RegisterType<EditoraAppService>().As<IEditoraAppService>().InstancePerLifetimeScope();
+            builder.RegisterType<EmprestimoAppService>().As<IEmprestimoAppService>().InstancePerLifetimeScope();
+            builder.RegisterType<LivroAppService>().As<ILivroAppService>().InstancePerLifetimeScope();
+            builder.RegisterType<LivroEmprestimoAppService>().As<ILivroEmprestimoAppService>().InstancePerLifetimeScope();
+            builder.RegisterType<UsuarioAppService>().As<IUsuarioAppService>().InstancePerLifetimeScope();
+         //   builder.RegisterType<UsuarioSuspensoAppService>().As<IUsuarioSuspensoAppService>().InstancePerLifetimeScope();
+            builder.RegisterGeneric(typeof(AppServiceBase<,>)).As(typeof(IAppServiceBase<,>));
+
         }
     }
 }

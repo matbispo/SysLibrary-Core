@@ -40,19 +40,5 @@ namespace SysLibrary.Data.Context
 
 
         }
-
-        /*   private void AdminConfig(ModelBuilder model)
-   {
-       model.Entity<Admin>(adm =>
-           {
-               adm.ToTable("Admins");
-               adm.HasKey(a => a.AdminId);
-               adm.Property(a => a.emailAdm).IsRequired().HasMaxLength(150);
-               adm.Property(a => a.login).IsRequired().HasMaxLength(50);
-               adm.Property(a => a.nomeAdm).IsRequired().HasMaxLength(150);
-               adm.Property(a => a.senha).IsRequired().HasMaxLength(30);
-               adm.Property(a => a.registroFuncionario).IsRequired().HasMaxLength(15);
-           });
-   }*/
     }
 }
