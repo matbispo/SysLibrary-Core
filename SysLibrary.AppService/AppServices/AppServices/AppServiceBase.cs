@@ -48,8 +48,7 @@ namespace SysLibrary.AppService.AppServices.AppServices
         {
             var entt = _service.GetById(id);
             var mapDto = Mapper.Map<tEntity, TDTO>(entt);
-            return mapDto;
-   
+            return mapDto;   
         }
 
         public void Delete(TDTO dto)
@@ -57,6 +56,5 @@ namespace SysLibrary.AppService.AppServices.AppServices
             var entity = Mapper.Map<TDTO, tEntity>(dto);
             _service.Remove(entity);
         }
-
     }
 }

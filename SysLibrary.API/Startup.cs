@@ -9,9 +9,8 @@ using Autofac.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using SysLibrary.DI;
 using SysLibrary.Data.Context;
-using SysLibrary.Data.Repositories;
-using SysLibrary.Domain.Interfaces.Repositories;
 using AutoMapper;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace SysLibrary.API
 {
@@ -34,6 +33,10 @@ namespace SysLibrary.API
         {
             // Add framework services.
             services.AddMvc();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
             services.AddAutoMapper(); // typeof(Startup)
 
             services.AddDbContext<ContextDb>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -49,6 +52,12 @@ namespace SysLibrary.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
+
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
 

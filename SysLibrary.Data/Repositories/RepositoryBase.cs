@@ -55,5 +55,14 @@ namespace SysLibrary.Data.Repositories
             GC.SuppressFinalize(this);
             //throw new NotImplementedException();
         }
+
+       /* protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }*/
     }
 }

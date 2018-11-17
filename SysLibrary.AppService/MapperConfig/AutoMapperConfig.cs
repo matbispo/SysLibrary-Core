@@ -36,6 +36,8 @@ namespace SysLibrary.AppService.MapperConfig
             CreateMap<LivroEmprestimoDTO, LivroEmprestimo>();
             CreateMap<UsuarioDTO, Usuario>();
             CreateMap<UsuarioSuspensoDTO, UsuarioSuspenso>();
+
+            // talvez isso possa ser dividido em duas classes
         }
     }
 }
